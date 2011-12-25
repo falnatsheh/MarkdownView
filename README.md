@@ -34,3 +34,6 @@ To load a locale file, you have to add it to your assets folder and pass a url t
 
 To load a file on the web you need to pass the full url :                                                                 
 `markdownView.loadMarkDownData("http://www.my-site.com/myFile.md");`
+
+## License
+Licensed under the Apache License, Version 2.0. (The same as the Android project.)
