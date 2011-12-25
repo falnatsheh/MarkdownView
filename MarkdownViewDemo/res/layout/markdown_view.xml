@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/markdownText"
+         android:text="@string/md"
+        android:layout_width="fill_parent"
+        android:inputType="textMultiLine"
+        android:layout_height="fill_parent"  
+        android:layout_weight="1">
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Update" />
+
+    <us.feras.mdv.MarkdownView
+        android:id="@+id/markdownView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_weight="1"/>
+
+</LinearLayout>
