@@ -26,7 +26,7 @@ Using this method will result in loading md string to the MarkdownView and displ
 You can use this method to load local or online files. 
 
 To load a locale file, you have to add it to your assets folder and pass a url that start with "file:///android_asset/" : 
-markdownView.loadMarkDownData("file:///android_asset/myFile.md");   
+`markdownView.loadMarkDownData("file:///android_asset/myFile.md");`   
 
 To load a file on the web you need to pass the full url :
-markdownView.loadMarkDownData("http://www.my-site.com/myFile.md");
+`markdownView.loadMarkDownData("http://www.my-site.com/myFile.md");`
