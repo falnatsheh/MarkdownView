@@ -1,6 +1,12 @@
 ## What is it?
 MarkdownView is an Android webview with the capablity of loading Markdown text or file and display it as HTML, it uses MarkdownJ and extends Android webview. 
 
+## Demo app Screenshot
+This is a Screenshot from the demo app where it shows a markDown text in the upper half of the screen and when you hit update
+it will reload the text to MarkdownView (lower half of the screen).
+
+![MarkdownView screenshot](http://i.imgur.com/fNiSS.png)
+
 ##How to use it? 
 
 - To add MarkdownView to your project, include the jar, or the source code. 
