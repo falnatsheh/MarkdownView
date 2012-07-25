@@ -29,7 +29,7 @@ public class MarkdownView extends WebView {
 	public void loadMarkDownData(String data) {
 		MarkdownProcessor m = new MarkdownProcessor();
 		String html = m.markdown(data);
-		loadData(html, "text/html", "UTF-8");
+		loadDataWithBaseURL("fake://not/needed", html,"text/html", "UTF-8", null); 
 	}
 
 	String readFileFromAsset(String url) throws IOException {
@@ -76,7 +76,7 @@ public class MarkdownView extends WebView {
 
 		protected void onPostExecute(String result) {
 			if (result != null) {
-				loadData(result, "text/html", "UTF-8");
+				loadDataWithBaseURL("fake://not/needed", result,"text/html", "UTF-8", null); 
 			} else {
 				loadUrl("about:blank");
 			}
