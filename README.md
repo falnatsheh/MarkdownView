@@ -12,13 +12,17 @@ it will reload the text to MarkdownView (lower half of the screen).
 - To add MarkdownView to your project, include the jar, or the source code. 
 - Simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:
 
-`MarkdownView markdownView = new MarkdownView(this);`
-`setContentView(markdownView);`
+```java
+MarkdownView markdownView = new MarkdownView(this);
+setContentView(markdownView);
+```
  
 - Or you can also add it to your layout by using `<us.feras.mdv.MarkdownView android:id="@+id/markdownView" />` 
 and referance it in your activity:  
 
-`MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdownView);`
+```java
+MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdownView);
+```
 
 ##Loading MarkDown text or file (local and online): 
 
@@ -30,10 +34,16 @@ Using this method will result in loading md string to the MarkdownView and displ
 You can use this method to load local or online files. 
 
 To load a locale file, you have to add it to your assets folder and pass a url that start with "file:///android_asset/" : 
-`markdownView.loadMarkDownData("file:///android_asset/myFile.md");`   
 
-To load a file on the web you need to pass the full url :                                                                 
-`markdownView.loadMarkDownData("http://www.my-site.com/myFile.md");`
+```java
+markdownView.loadMarkDownData("file:///android_asset/myFile.md");
+```
+
+To load a file on the web you need to pass the full url :    
+
+```java
+markdownView.loadMarkDownData("http://www.my-site.com/myFile.md");
+```
 
 ## License
 Licensed under the Apache License, Version 2.0. (The same as the Android project.)
