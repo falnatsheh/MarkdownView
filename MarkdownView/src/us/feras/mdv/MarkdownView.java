@@ -26,22 +26,49 @@ public class MarkdownView extends WebView {
 		super(context);
 	}
 
+	/**
+	 * Loads the given Markdown text to the view as rich formatted HTML. The
+	 * HTML output will be styled based on the given CSS file.
+	 * 
+	 * @param txt
+	 *            - input in markdown format
+	 * @param cssFileUrl
+	 *            - a URL to css File. If the file located in the project assets
+	 *            folder then the URL should start with "file:///android_asset/"
+	 */
 	public void loadMarkdown(String txt, String cssFileUrl) {
 		loadMarkdownToView(txt, cssFileUrl);
 	}
 
+	/**
+	 * Loads the given Markdown text to the view as rich formatted HTML.
+	 * 
+	 * @param txt
+	 *            - input in Markdown format
+	 */
 	public void loadMarkdown(String txt) {
 		loadMarkdown(txt, null);
 	}
 
+	/**
+	 * Loads the given Markdown file to the view as rich formatted HTML. The HTML
+	 * output will be styled based on the given CSS file.
+	 * 
+	 * @param url
+	 *            - a URL to the Markdown file. If the file located in the
+	 *            project assets folder then the URL should start with
+	 *            "file:///android_asset/"
+	 * @param cssFileUrl
+	 *            - a URL to css File. If the file located in the project assets
+	 *            folder then the URL should start with "file:///android_asset/"
+	 */
 	public void loadMarkdownFile(String url, String cssFileUrl) {
 		new LoadMarkdownUrlTask().execute(url, cssFileUrl);
 	}
-	
-	public void loadMarkdownFile(String url) { 
+
+	public void loadMarkdownFile(String url) {
 		loadMarkdownFile(url, null);
 	}
-
 
 	private String readFileFromAsset(String url) throws IOException {
 		BufferedReader input = null;
@@ -68,6 +95,7 @@ public class MarkdownView extends WebView {
 	private class LoadMarkdownUrlTask extends
 			AsyncTask<String, Integer, String> {
 		private String cssFileUrl;
+
 		protected String doInBackground(String... params) {
 			try {
 				String txt = "";
@@ -105,8 +133,7 @@ public class MarkdownView extends WebView {
 					"<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\" />"
 							+ html, cssFileUrl);
 		}
-		loadDataWithBaseURL("fake://", html, "text/html", "UTF-8",
-				null);
+		loadDataWithBaseURL("fake://", html, "text/html", "UTF-8", null);
 	}
 
 }
