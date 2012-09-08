@@ -9,7 +9,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-	/** Called when the activity is first created. */
 	Context context;
 
 	@Override
