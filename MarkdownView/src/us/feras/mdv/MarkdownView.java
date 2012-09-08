@@ -26,18 +26,31 @@ public class MarkdownView extends WebView {
 		super(context);
 	}
 
-	public void loadMarkDownData(String data) {
-		MarkdownProcessor m = new MarkdownProcessor();
-		String html = m.markdown(data);
-		loadDataWithBaseURL("fake://not/needed", html,"text/html", "UTF-8", null); 
+	public void loadMarkdown(String txt, String cssFileUrl) {
+		loadMarkdownToView(txt, cssFileUrl);
 	}
 
-	String readFileFromAsset(String url) throws IOException {
+	public void loadMarkdown(String txt) {
+		loadMarkdown(txt, null);
+	}
+
+	public void loadMarkdownFile(String url, String cssFileUrl) {
+		new LoadMarkdownUrlTask().execute(url, cssFileUrl);
+	}
+	
+	public void loadMarkdownFile(String url) { 
+		loadMarkdownFile(url, null);
+	}
+
+
+	private String readFileFromAsset(String url) throws IOException {
 		BufferedReader input = null;
 		StringBuilder contents = new StringBuilder();
 		try {
-			String assetFileName = url.substring( url.lastIndexOf('/')+1, url.length());
-			input = new BufferedReader(new InputStreamReader(getContext().getAssets().open(assetFileName)));
+			String assetFileName = url.substring(url.lastIndexOf('/') + 1,
+					url.length());
+			input = new BufferedReader(new InputStreamReader(getContext()
+					.getAssets().open(assetFileName)));
 			String line = null;
 			while ((line = input.readLine()) != null) {
 				contents.append(line);
@@ -52,39 +65,48 @@ public class MarkdownView extends WebView {
 		}
 	}
 
-	private class LoadMarkdownUrlTask extends AsyncTask<String, Integer, String> {
-		protected String doInBackground(String... urls) {
+	private class LoadMarkdownUrlTask extends
+			AsyncTask<String, Integer, String> {
+		private String cssFileUrl;
+		protected String doInBackground(String... params) {
 			try {
-				String data;
-				String url = urls[0];
-				if(url.startsWith("file:///android_asset")){
-					data = readFileFromAsset(url);
-				}else{
-					data = HttpHelper.get(url).getResponseMessage();
+				String txt = "";
+				String url = params[0];
+				this.cssFileUrl = params[1];
+				if (url.startsWith("file:///android_asset")) {
+					txt = readFileFromAsset(url);
+				} else {
+					txt = HttpHelper.get(url).getResponseMessage();
 				}
-				MarkdownProcessor m = new MarkdownProcessor();
-				String html = m.markdown(data);
-				return html;
+				return txt;
 			} catch (Exception ex) {
 			}
 			return null;
 		}
 
 		protected void onProgressUpdate(Integer... progress) {
-
+			// no-op
 		}
 
 		protected void onPostExecute(String result) {
 			if (result != null) {
-				loadDataWithBaseURL("fake://not/needed", result,"text/html", "UTF-8", null); 
+				loadMarkdownToView(result, cssFileUrl);
 			} else {
 				loadUrl("about:blank");
 			}
 		}
 	}
 
-	public void loadMarkdownUrl(final String url) {
-		new LoadMarkdownUrlTask().execute(url);
+	private void loadMarkdownToView(String txt, String cssFileUrl) {
+		MarkdownProcessor m = new MarkdownProcessor();
+		String html = m.markdown(txt);
+		if (cssFileUrl != null) {
+			html = String.format(
+					"<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\" />"
+							+ html, cssFileUrl);
+		}
+		loadDataWithBaseURL("fake://", html, "text/html", "UTF-8",
+				null);
 	}
 
 }
