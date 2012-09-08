@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.main);
 		context = this;
 		
-		Button mdDataButton = (Button) findViewById(R.id.locale_text_button);
+		Button mdDataButton = (Button) findViewById(R.id.local_text_button);
 		mdDataButton.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		Button localeMdButton = (Button) findViewById(R.id.locale_md_button);
+		Button localeMdButton = (Button) findViewById(R.id.local_md_button);
 		localeMdButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
