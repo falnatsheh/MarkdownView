@@ -12,7 +12,7 @@ public class OnlineMarkdownActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE); 
 		MarkdownView markdownView = new MarkdownView(this); 
 		setContentView(markdownView);
-		markdownView.loadMarkdownUrl("https://raw.github.com/falnatsheh/MarkdownView/master/README.md");
+		markdownView.loadMarkdownFile("https://raw.github.com/falnatsheh/MarkdownView/master/README.md");
 	}
 }
  

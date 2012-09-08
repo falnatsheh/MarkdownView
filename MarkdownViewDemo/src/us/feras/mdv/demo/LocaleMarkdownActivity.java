@@ -12,6 +12,6 @@ public class LocaleMarkdownActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		MarkdownView webView = new MarkdownView(this);
 		setContentView(webView);
-		webView.loadMarkdownUrl("file:///android_asset/hello.md");
+		webView.loadMarkdownFile("file:///android_asset/hello.md");
 	}
 }

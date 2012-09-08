@@ -36,6 +36,6 @@ public class MarkdownDataActivity extends Activity {
 	}
 
 	void updateMarkdownView() {
-		markdownView.loadMarkDownData(markdownEditText.getText().toString());
+		markdownView.loadMarkdown(markdownEditText.getText().toString());
 	}
 }
