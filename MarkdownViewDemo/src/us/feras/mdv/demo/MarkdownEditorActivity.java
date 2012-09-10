@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class MarkdownDataActivity extends Activity {
+public class MarkdownEditorActivity extends Activity {
 
 	EditText markdownEditText;
 	MarkdownView markdownView;
@@ -32,7 +32,6 @@ public class MarkdownDataActivity extends Activity {
 				updateMarkdownView();
 			}
 		});
-
 	}
 
 	void updateMarkdownView() {
