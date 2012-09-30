@@ -20,7 +20,7 @@ public class MarkdownDataActivity extends Activity {
 		setContentView(R.layout.markdown_view);
 		markdownEditText = (EditText) findViewById(R.id.markdownText);
 		markdownView = (MarkdownView) findViewById(R.id.markdownView);
-		String text = "## This is a demo of MarkdownView" + "\n" + "* * *" + "\n" + "### Edit the text and hit update to see the changes on the view.";
+		String text = getResources().getString(R.string.md_sample_data);
 		markdownEditText.setText(text);
 		markdownView.setBackgroundColor(Color.parseColor("#EED8AE"));
 		updateMarkdownView();
