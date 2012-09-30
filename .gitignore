@@ -1,3 +1,6 @@
+# Android & Eclipse #
+######################
+
 # built application files
 *.apk
 *.ap_
@@ -12,5 +15,7 @@
 bin/
 gen/
 
-# Local configuration file (sdk path, etc)
-local.properties
+# OS generated files #
+######################
+.DS_Store
+.DS_Store? 
