@@ -6,11 +6,11 @@
 
     <EditText
         android:id="@+id/markdownText"
-         android:text="@string/md"
         android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
         android:inputType="textMultiLine"
-        android:layout_height="fill_parent"  
-        android:layout_weight="1">
+        android:text="@string/md" >
 
         <requestFocus />
     </EditText>
@@ -24,7 +24,7 @@
     <us.feras.mdv.MarkdownView
         android:id="@+id/markdownView"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" 
-        android:layout_weight="1"/>
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
 
 </LinearLayout>

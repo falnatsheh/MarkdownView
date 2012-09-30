@@ -2,7 +2,6 @@ package us.feras.mdv.demo;
 
 import us.feras.mdv.MarkdownView;
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,8 +10,8 @@ import android.widget.EditText;
 
 public class MarkdownDataActivity extends Activity {
 
-	EditText markdownEditText;
-	MarkdownView markdownView;
+	private EditText markdownEditText;
+	private MarkdownView markdownView;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -22,7 +21,6 @@ public class MarkdownDataActivity extends Activity {
 		markdownView = (MarkdownView) findViewById(R.id.markdownView);
 		String text = getResources().getString(R.string.md_sample_data);
 		markdownEditText.setText(text);
-		markdownView.setBackgroundColor(Color.parseColor("#EED8AE"));
 		updateMarkdownView();
 
 		Button updateView = (Button) findViewById(R.id.updateButton);
@@ -35,7 +33,7 @@ public class MarkdownDataActivity extends Activity {
 
 	}
 
-	void updateMarkdownView() {
+	private void updateMarkdownView() {
 		markdownView.loadMarkDownData(markdownEditText.getText().toString());
 	}
 }

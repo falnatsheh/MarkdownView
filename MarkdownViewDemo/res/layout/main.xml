@@ -16,22 +16,22 @@
         android:layout_weight="4" >
 
         <Button
-            android:id="@+id/locale_text_button"
+            android:id="@+id/local_text_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Locale Text" android:layout_centerHorizontal="true" android:width="200dp"/>
+            android:text="Local Text" android:layout_centerHorizontal="true" android:width="200dp"/>
 
         <Button
             android:id="@+id/online_md_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Online MarkDown File" android:layout_centerHorizontal="true" android:layout_below="@+id/locale_md_button" android:layout_marginTop="20dp" android:width="200dp"/>
+            android:text="Online MarkDown File" android:layout_centerHorizontal="true" android:layout_below="@+id/local_md_button" android:layout_marginTop="20dp" android:width="200dp"/>
 
         <Button
-            android:id="@+id/locale_md_button"
+            android:id="@+id/local_md_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Locale MarkDown File" android:layout_below="@+id/locale_text_button" android:layout_centerHorizontal="true" android:layout_marginTop="20dp" android:width="200dp"/>
+            android:text="Local MarkDown File" android:layout_below="@+id/local_text_button" android:layout_centerHorizontal="true" android:layout_marginTop="20dp" android:width="200dp"/>
 
     </RelativeLayout>
 
