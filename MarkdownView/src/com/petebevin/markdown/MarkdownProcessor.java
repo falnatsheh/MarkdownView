@@ -57,7 +57,6 @@ public class MarkdownProcessor {
     private static final CharacterProtector HTML_PROTECTOR = new CharacterProtector();
     private static final CharacterProtector CHAR_PROTECTOR = new CharacterProtector();
     private int listLevel;
-    private String emptyElementSuffix = " />";
     private int tabWidth = 4;
 
     /**
@@ -493,13 +492,6 @@ public class MarkdownProcessor {
                 public String replacement(Matcher m) {
                     String list = m.group(1);
                     String listStart = m.group(3);
-                    String listType = "";
-
-                    if (listStart.matches("[*+-]")) {
-                     listType = "ul";
-                    } else {
-                     listType = "ol";
-                    }
 
                     // Turn double returns into triple returns, so that we can make a
                     // paragraph for the last item in a list, if necessary:
