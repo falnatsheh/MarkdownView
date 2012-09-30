@@ -3,7 +3,7 @@
 
     <string name="md"> 
     </string>
-    <string name="app_name">MarkdownViewDemo</string>
-    <string name="md_sample_data" >## This is a demo of MarkdownView \n * * * \n ### Edit the text and hit update to see the changes on the view.></string>
+    <string name="app_name">MarkdownView Demo</string>
+    <string name="md_sample_data" >## This is a demo of MarkdownView \n * * * \n### Edit the text and hit update to see the changes on the view.</string>
 
 </resources>
