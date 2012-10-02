@@ -6,10 +6,10 @@
     <string name="md_sample_data">## This is a demo of MarkdownView \n * * * \n### Edit the text and hit update to see the changes on the view.</string>
 
     <string-array name="md_themes">
+        <item>foghorn</item>
         <item>alt</item>
         <item>classic</item>
         <item>dark</item>
-        <item>foghorn</item>
         <item>paperwhite</item>
     </string-array>
 

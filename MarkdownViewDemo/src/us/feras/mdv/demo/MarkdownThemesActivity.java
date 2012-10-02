@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class MarkdownThemesActivity extends Activity implements
 		OnItemSelectedListener {
@@ -28,11 +27,10 @@ public class MarkdownThemesActivity extends Activity implements
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,
 			long id) {
-		Toast.makeText(this, "selected", Toast.LENGTH_SHORT).show();
 		MarkdownView mdv = (MarkdownView) findViewById(R.id.markdownView);
-//		mdv.loadMarkdownUrl("file:///android_asset/hello.md",
-//				"file:///android_asset/markdown_css_themes/"
-//						+ parent.getItemAtPosition(pos).toString() + "css");
+		mdv.loadMarkdownFile("file:///android_asset/hello.md",
+				"file:///android_asset/markdown_css_themes/"
+						+ parent.getItemAtPosition(pos).toString() + ".css");
 	}
 
 	@Override
