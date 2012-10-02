@@ -7,7 +7,10 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Demo sample demonstrating MarkdownView." android:layout_weight="1" android:paddingTop="20dp" android:paddingLeft="20dp"/>
+        android:layout_weight="1"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:text="Demo sample demonstrating MarkdownView." />
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"
@@ -16,23 +19,46 @@
         android:layout_weight="4" >
 
         <Button
+            android:id="@+id/themes_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:onClick="displayThemesActivity"
+            android:text="Themes"
+            android:width="200dp" />
+
+        <Button
             android:id="@+id/local_text_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Local Text" android:layout_centerHorizontal="true" android:width="200dp"/>
+            android:layout_below="@id/themes_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="displayDataActivity"
+            android:text="Local Text"
+            android:width="200dp" />
 
         <Button
             android:id="@+id/online_md_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Online MarkDown File" android:layout_centerHorizontal="true" android:layout_below="@+id/local_md_button" android:layout_marginTop="20dp" android:width="200dp"/>
+            android:layout_below="@id/local_text_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="displayOnlineMdActivity"
+            android:text="Online MarkDown File"
+            android:width="200dp" />
 
         <Button
             android:id="@+id/local_md_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Local MarkDown File" android:layout_below="@+id/local_text_button" android:layout_centerHorizontal="true" android:layout_marginTop="20dp" android:width="200dp"/>
-
+            android:layout_below="@id/online_md_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="displayLocalMdFileActivity"
+            android:text="Local MarkDown File"
+            android:width="200dp" />
     </RelativeLayout>
 
 </LinearLayout>

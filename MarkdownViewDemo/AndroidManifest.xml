@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".OnlineMarkdownActivity" >
         </activity>
+        <activity android:name=".MarkdownThemesActivity" >
+        </activity>
         <activity
             android:name=".MarkdownDataActivity"
             android:windowSoftInputMode="stateHidden" >
