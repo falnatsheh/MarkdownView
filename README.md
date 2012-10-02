@@ -24,26 +24,26 @@ and referance it in your activity:
 MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdownView);
 ```
 
-##Loading MarkDown text or file (local and online): 
+##Loading MarkDown text or locale/online file: 
 
-- **loadMarkdownData(String text)**
+- **loadMarkdown(String text)**
 Using this method will result in loading md string to the MarkdownView and displaying it as HTML. 
 
  
-- **loadMarkdownUrl(String url)**
+- **loadMarkdownFile(String url)**
 You can use this method to load local or online files. 
 
 To load a locale file, you have to add it to your assets folder and pass a url that start with "file:///android_asset/" : 
 
 ```java
-markdownView.loadMarkDownData("file:///android_asset/myFile.md");
+markdownView.loadMarkdownFile("file:///android_asset/myFile.md");
 ```
 
 To load a file on the web you need to pass the full url :    
 
 ```java
-markdownView.loadMarkDownData("http://www.my-site.com/myFile.md");
+markdownView.loadMarkdownFile("http://www.my-site.com/myFile.md");
 ```
 
 ## License
-Licensed under the Apache License, Version 2.0. (The same as the Android project.)
+Licensed under the Apache License, Version 2.0. (Same as the Android project.)
