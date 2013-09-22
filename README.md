@@ -1,4 +1,3 @@
-
 ![MarkdownView screenshot](http://i.imgur.com/fNiSS.png)
 
 ## What is it?
@@ -43,4 +42,4 @@ markdownView.loadMarkdownFile("http://www.my-site.com/myFile.md");
 ```
 
 ## License
-Licensed under the Apache License, Version 2.0. (Same as the Android project.)
+Apache 2.0
