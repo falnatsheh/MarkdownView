@@ -14,7 +14,7 @@ setContentView(markdownView);
 ```
  
 - Or you can also add it to your layout by using `<us.feras.mdv.MarkdownView android:id="@+id/markdownView" />` 
-and referance it in your activity:  
+and reference it in your activity:  
 
 ```java
 MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdownView);
