@@ -129,6 +129,7 @@ public class MarkdownView extends WebView {
 		MarkdownProcessor m = new MarkdownProcessor();
 		String html = m.markdown(txt);
 		if (cssFileUrl != null) {
+			html=html.replace("%", "%%");
 			html = String.format(
 					"<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\" />"
 							+ html, cssFileUrl);
