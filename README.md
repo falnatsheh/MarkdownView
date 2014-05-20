@@ -41,5 +41,14 @@ To load a file on the web you need to pass the full url :
 markdownView.loadMarkdownFile("http://www.my-site.com/myFile.md");
 ```
 
+## Themeing
+
+You could apply custom CSS to the MarkdownView. Example: 
+
+```java
+markdownView.loadMarkdownFile("file:///android_asset/hello.md","file:///android_asset/MyCustomTheme.css");
+```
+You could take a look at CSS example [here](https://github.com/falnatsheh/MarkdownView/tree/master/MarkdownViewDemo/assets/markdown_css_themes), you could also view them in the sample app.
+						
 ## License
 Apache 2.0
