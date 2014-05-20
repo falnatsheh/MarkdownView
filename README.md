@@ -41,7 +41,7 @@ To load a file on the web you need to pass the full url :
 markdownView.loadMarkdownFile("http://www.my-site.com/myFile.md");
 ```
 
-## Themeing
+## Theming
 
 You could apply custom CSS to the MarkdownView. Example: 
 
