@@ -20,7 +20,7 @@ and reference it in your activity:
 MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdownView);
 ```
 
-##Loading MarkDown text or a local or online file: 
+##Loading MarkDown text or file (local/online): 
 
 - **loadMarkdown(String text)**
 Using this method will result in loading md string to the MarkdownView and displaying it as HTML. 
