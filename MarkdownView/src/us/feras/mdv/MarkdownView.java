@@ -73,7 +73,7 @@ public class MarkdownView extends WebView {
 		loadMarkdownFile(url, null);
 	}
 
-	private String readFileFromAsset(String url) throws IOException {
+	private String readFileFromAsset(String assetFilename) throws IOException {
 		BufferedReader input = null;
 		StringBuilder contents = new StringBuilder();
 		try {
