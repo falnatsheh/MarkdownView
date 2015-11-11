@@ -1,90 +1,92 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Markdownview : MarkdownView is an Android webview with the capablity of loading Markdown text or file and display it as HTML, it uses MarkdownJ and extends Android webview." />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Markdownview</title>
+    <meta charset="UTF-8">
+    <title>Markdownview by falnatsheh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Markdownview</h1>
+      <h2 class="project-tagline">MarkdownView is an Android webview with the capablity of loading Markdown text or file and display it as HTML, it uses MarkdownJ and extends Android webview.</h2>
+      <a href="https://github.com/falnatsheh/MarkdownView" class="btn">View on GitHub</a>
+      <a href="https://github.com/falnatsheh/MarkdownView/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/falnatsheh/MarkdownView/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/falnatsheh/MarkdownView">View on GitHub</a>
+    <section class="main-content">
+      <p><img alt="MarkdownView screenshot"></p>
 
-          <h1 id="project_title">Markdownview</h1>
-          <h2 id="project_tagline">MarkdownView is an Android webview with the capablity of loading Markdown text or file and display it as HTML, it uses MarkdownJ and extends Android webview.</h2>
+<p><img src="https://i.imgur.com/EDDSxZK.jpg" alt=""></p>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/falnatsheh/MarkdownView/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/falnatsheh/MarkdownView/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h2>What is it?</h2>
+<h2>
+<a id="what-is-it" class="anchor" href="#what-is-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is it?</h2>
 
 <p>MarkdownView is an Android webview with the capablity of loading Markdown text or file and display it as HTML, it uses MarkdownJ and extends Android webview. </p>
 
-<h2>How to use it?</h2>
+<h2>
+<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it?</h2>
 
 <ul>
 <li>To add MarkdownView to your project, include the jar, or the source code. </li>
-<li>Simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate </li>
-</ul><p>method:</p>
+<li>Simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:</li>
+</ul>
 
-<div class="highlight"><pre><span class="n">MarkdownView</span> <span class="n">markdownView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MarkdownView</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
-<span class="n">setContentView</span><span class="o">(</span><span class="n">markdownView</span><span class="o">);</span>
-</pre></div>
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">MarkdownView</span> markdownView <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">MarkdownView</span>(<span class="pl-v">this</span>);
+setContentView(markdownView);</pre></div>
 
 <ul>
 <li>Or you can also add it to your layout by using <code>&lt;us.feras.mdv.MarkdownView android:id="@+id/markdownView" /&gt;</code> 
-and referance it in your activity:<br>
+and reference it in your activity:<br>
 </li>
-</ul><div class="highlight"><pre><span class="n">MarkdownView</span> <span class="n">markdownView</span> <span class="o">=</span> <span class="o">(</span><span class="n">MarkdownView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">markdownView</span><span class="o">);</span>
-</pre></div>
+</ul>
 
-<h2>Loading MarkDown text or locale/online file:</h2>
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">MarkdownView</span> markdownView <span class="pl-k">=</span> (<span class="pl-smi">MarkdownView</span>) findViewById(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>markdownView);</pre></div>
+
+<h2>
+<a id="loading-markdown-text-or-file-localonline" class="anchor" href="#loading-markdown-text-or-file-localonline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loading MarkDown text or file (local/online):</h2>
 
 <ul>
 <li><p><strong>loadMarkdown(String text)</strong>
 Using this method will result in loading md string to the MarkdownView and displaying it as HTML. </p></li>
 <li><p><strong>loadMarkdownFile(String url)</strong>
 You can use this method to load local or online files. </p></li>
-</ul><p>To load a locale file, you have to add it to your assets folder and pass a url that start with "file:///android_asset/" : </p>
+</ul>
 
-<div class="highlight"><pre><span class="n">markdownView</span><span class="o">.</span><span class="na">loadMarkdownFile</span><span class="o">(</span><span class="s">"file:///android_asset/myFile.md"</span><span class="o">);</span>
-</pre></div>
+<p>To load a local file, you have to add it to your assets folder and pass a url that start with "file:///android_asset/" : </p>
+
+<div class="highlight highlight-source-java"><pre>markdownView<span class="pl-k">.</span>loadMarkdownFile(<span class="pl-s"><span class="pl-pds">"</span>file:///android_asset/myFile.md<span class="pl-pds">"</span></span>);</pre></div>
 
 <p>To load a file on the web you need to pass the full url :    </p>
 
-<div class="highlight"><pre><span class="n">markdownView</span><span class="o">.</span><span class="na">loadMarkdownFile</span><span class="o">(</span><span class="s">"http://www.my-site.com/myFile.md"</span><span class="o">);</span>
-</pre></div>
+<div class="highlight highlight-source-java"><pre>markdownView<span class="pl-k">.</span>loadMarkdownFile(<span class="pl-s"><span class="pl-pds">"</span>http://www.my-site.com/myFile.md<span class="pl-pds">"</span></span>);</pre></div>
 
-<h2>License</h2>
+<h2>
+<a id="theming" class="anchor" href="#theming" aria-hidden="true"><span class="octicon octicon-link"></span></a>Theming</h2>
 
-<p>Licensed under the Apache License, Version 2.0. (Same as the Android project.)</p>
-      </section>
-    </div>
+<p>You could apply custom CSS to the MarkdownView. Example: </p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Markdownview maintained by <a href="https://github.com/falnatsheh">falnatsheh</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<div class="highlight highlight-source-java"><pre>markdownView<span class="pl-k">.</span>loadMarkdownFile(<span class="pl-s"><span class="pl-pds">"</span>file:///android_asset/hello.md<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>file:///android_asset/MyCustomTheme.css<span class="pl-pds">"</span></span>);</pre></div>
+
+<p>You could take a look at CSS example <a href="https://github.com/falnatsheh/MarkdownView/tree/master/MarkdownViewDemo/assets/markdown_css_themes">here</a>, you could also view them in the sample app.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Apache 2.0</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/falnatsheh/MarkdownView">Markdownview</a> is maintained by <a href="https://github.com/falnatsheh">falnatsheh</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
