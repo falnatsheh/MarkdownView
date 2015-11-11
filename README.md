@@ -1,4 +1,4 @@
-![MarkdownView screenshot](http://i.imgur.com/fNiSS.png)
+![MarkdownView screenshot](http://i.imgur.com/EDDSxZK.jpg)
 
 ## What is it?
 MarkdownView is an Android webview with the capablity of loading Markdown text or file and display it as HTML, it uses MarkdownJ and extends Android webview. 
