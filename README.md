@@ -13,8 +13,9 @@ MarkdownView is an Android webview with the capablity of loading Markdown text o
 	}
 ```
 
+## Usage
 
-- Simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:
+Simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:
 
 ```java
 MarkdownView markdownView = new MarkdownView(this);
