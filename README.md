@@ -2,7 +2,9 @@
 
 ## About
 
-MarkdownView is an Android webview with the capablity of loading Markdown text or file and display it as HTML, it uses MarkdownJ and extends Android webview. 
+MarkdownView (Markdown For Android) is an Android library that helps you display Markdown text or files as formmated HTML, you could load markdown text or local/remote files and you could style the output using CSS. 
+
+The MarkdownView itself extends Android webview and adds the nessery logic to parse Markdown (using MarkdownJ) and displaying the output. 
 
 ## Getting started
 
@@ -15,27 +17,27 @@ MarkdownView is an Android webview with the capablity of loading Markdown text o
 
 ## Usage
 
-Simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:
+A simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:
 
 ```java
 MarkdownView markdownView = new MarkdownView(this);
 setContentView(markdownView);
 ```
  
-- Or you can also add it to your layout by using `<us.feras.mdv.MarkdownView android:id="@+id/markdownView" />` 
+Or you can also add it to your layout by using `<us.feras.mdv.MarkdownView android:id="@+id/markdownView" />` 
 and reference it in your activity:  
 
 ```java
 MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdownView);
 ```
 
-## Loading MarkDown text or file: 
+## Loading Markdown text or file: 
 
-- **loadMarkdown(String text)**
+- `loadMarkdown(String text)`:
 Using this method will result in loading md string to the MarkdownView and displaying it as HTML. 
 
  
-- **loadMarkdownFile(String url)**
+- `loadMarkdownFile(String url)`:
 You can use this method to load local or online files. 
 
 To load a local file, you have to add it to your assets folder and pass a url that start with "file:///android_asset/" : 
