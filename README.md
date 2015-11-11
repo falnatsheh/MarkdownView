@@ -6,7 +6,14 @@ MarkdownView is an Android webview with the capablity of loading Markdown text o
 
 ## Getting started
 
-- To add MarkdownView to your project, include the jar, or the source code. 
+- To add MarkdownView to your project, add the following to `build.gradle` file:
+```json
+dependencies { 
+    compile 'us.feras.mdv:markdownview:1.0'
+}
+```
+
+
 - Simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:
 
 ```java
