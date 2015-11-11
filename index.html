@@ -19,37 +19,65 @@
     </section>
 
     <section class="main-content">
-      <h2>
-<a id="what-is-it" class="anchor" href="#what-is-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is it?</h2>
-
-<p>MarkdownView is an Android webview with the capablity of loading Markdown text or file and display it as HTML, it uses MarkdownJ and extends Android webview. </p>
+      <p><img src="http://i.imgur.com/EDDSxZK.jpg" alt="MarkdownView screenshot"></p>
 
 <h2>
-<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it?</h2>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p>MarkdownView (Markdown For Android) is an Android library that helps you display Markdown text or files as formmated HTML, you could load markdown text or local/remote files and you could style the output using CSS. </p>
+
+<p>The MarkdownView itself extends Android webview and adds the nessery logic to parse Markdown (using MarkdownJ) and displaying the output. </p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
 
 <ul>
-<li>To add MarkdownView to your project, include the jar, or the source code. </li>
-<li>Simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:</li>
+<li>To add MarkdownView to your project, add the following to <code>build.gradle</code> file:</li>
 </ul>
+
+<div class="highlight highlight-source-js"><pre>    dependencies { 
+        compile <span class="pl-s"><span class="pl-pds">'</span>us.feras.mdv:markdownview:1.0<span class="pl-pds">'</span></span>
+    }</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>A simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:</p>
 
 <div class="highlight highlight-source-java"><pre><span class="pl-smi">MarkdownView</span> markdownView <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">MarkdownView</span>(<span class="pl-v">this</span>);
 setContentView(markdownView);</pre></div>
 
-<ul>
-<li>Or you can also add it to your layout by using <code>&lt;us.feras.mdv.MarkdownView android:id="@+id/markdownView" /&gt;</code> 
-and reference it in your activity:<br>
-</li>
-</ul>
+<p>Or you can also add it to your layout by using <code>&lt;us.feras.mdv.MarkdownView android:id="@+id/markdownView" /&gt;</code> 
+and reference it in your activity:  </p>
 
 <div class="highlight highlight-source-java"><pre><span class="pl-smi">MarkdownView</span> markdownView <span class="pl-k">=</span> (<span class="pl-smi">MarkdownView</span>) findViewById(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>markdownView);</pre></div>
 
 <h2>
-<a id="loading-markdown-text-or-file-localonline" class="anchor" href="#loading-markdown-text-or-file-localonline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loading MarkDown text or file (local/online):</h2>
+<a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Screenshots</h2>
+
+<p><img src="http://i.imgur.com/gY8eXaj.jpg" width="300"> 
+<img src="http://i.imgur.com/ETHYbCv.jpg" width="300"> </p>
+
+<h1>
+<a id="demo-app-and-code-sample" class="anchor" href="#demo-app-and-code-sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo App and Code Sample</h1>
+
+<p>The above screenshots taking from the demo app which could be found here. The demo app include code to demonstrate: </p>
 
 <ul>
-<li><p><strong>loadMarkdown(String text)</strong>
+<li>Loading Local Markdown File. </li>
+<li>Loading Remote Markdown File. </li>
+<li>Loading Markdown text.</li>
+<li>Live Preview sample code (similar to <a href="http://25.io/mou/">Mou Mac app</a> preview)</li>
+<li>Themes</li>
+</ul>
+
+<h2>
+<a id="loading-markdown-text-or-file" class="anchor" href="#loading-markdown-text-or-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loading Markdown text or file:</h2>
+
+<ul>
+<li><p><code>loadMarkdown(String text)</code>:
 Using this method will result in loading md string to the MarkdownView and displaying it as HTML. </p></li>
-<li><p><strong>loadMarkdownFile(String url)</strong>
+<li><p><code>loadMarkdownFile(String url)</code>:
 You can use this method to load local or online files. </p></li>
 </ul>
 
