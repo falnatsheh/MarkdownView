@@ -31,6 +31,21 @@ and reference it in your activity:
 MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdownView);
 ```
 
+## Screenshots
+
+<img src="http://i.imgur.com/gY8eXaj.jpg" width="300"> 
+<img src="http://i.imgur.com/ETHYbCv.jpg" width="300"> 
+
+# Demo App and Code Sample
+
+The above screenshots taking from the demo app which could be found here. The demo app include code to demonstrate: 
+
+- Loading Local Markdown File. 
+- Loading Remote Markdown File. 
+- Loading Markdown text.
+- Live Preview sample code (similar to [Mou Mac app](http://25.io/mou/) preview)
+- Themes
+
 ## Loading Markdown text or file: 
 
 - `loadMarkdown(String text)`:
