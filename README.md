@@ -2,9 +2,9 @@
 
 ## About
 
-MarkdownView (Markdown For Android) is an Android library that helps you display Markdown text or files as formmated HTML, you could load markdown text or local/remote files and you could style the output using CSS. 
+MarkdownView (Markdown For Android) is an Android library that helps you display Markdown text or files (local/remote) as formmated HTML, and style the output using CSS. 
 
-The MarkdownView itself extends Android webview and adds the nessery logic to parse Markdown (using MarkdownJ) and displaying the output. 
+The MarkdownView itself extends Android webview and adds the nessery logic to parse Markdown (using MarkdownJ) and display the output HTML on the view. 
 
 ## Getting started
 
@@ -17,18 +17,28 @@ The MarkdownView itself extends Android webview and adds the nessery logic to pa
 
 ## Usage
 
-A simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:
+A simple usage :
+
+ 
+A simple usage is to add the MarkdownView to your layout: 
 
 ```java
-MarkdownView markdownView = new MarkdownView(this);
-setContentView(markdownView);
+<us.feras.mdv.MarkdownView android:id="@+id/markdownView" />
 ```
- 
-Or you can also add it to your layout by using `<us.feras.mdv.MarkdownView android:id="@+id/markdownView" />` 
-and reference it in your activity:  
+
+and reference it in your Activity/Fragment:  
 
 ```java
 MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdownView);
+markdownView.loadMarkdown("## Hello Markdown"); 
+```
+**Note**:
+You could also create the view by code. Below an example of how to set the whole activity to be a MarkdownView by Adding the following to your onCreate method:
+
+```java
+  MarkdownView markdownView = new MarkdownView(this);
+  setContentView(markdownView);
+  markdownView.loadMarkdown("## Hello Markdown"); 
 ```
 
 ## Screenshots
