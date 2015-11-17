@@ -3,6 +3,7 @@ package us.feras.mdv;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.String;
 
 import us.feras.mdv.util.HttpHelper;
 
@@ -17,6 +18,8 @@ import com.petebevin.markdown.MarkdownProcessor;
  * @author Feras Alnatsheh
  */
 public class MarkdownView extends WebView {
+
+	public static final String ANDROID_ASSET_PREFIX_STRING_MARKER = "file:///android_asset";
 
 	public MarkdownView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -70,14 +73,11 @@ public class MarkdownView extends WebView {
 		loadMarkdownFile(url, null);
 	}
 
-	private String readFileFromAsset(String url) throws IOException {
+	private String readFileFromAsset(String assetFilename) throws IOException {
 		BufferedReader input = null;
 		StringBuilder contents = new StringBuilder();
 		try {
-			String assetFileName = url.substring(url.lastIndexOf('/') + 1,
-					url.length());
-			input = new BufferedReader(new InputStreamReader(getContext()
-					.getAssets().open(assetFileName)));
+			input = new BufferedReader(new InputStreamReader(getContext().getAssets().open(assetFilename)));
 			String line = null;
 			while ((line = input.readLine()) != null) {
 				contents.append(line);
@@ -101,8 +101,8 @@ public class MarkdownView extends WebView {
 				String txt = "";
 				String url = params[0];
 				this.cssFileUrl = params[1];
-				if (url.startsWith("file:///android_asset")) {
-					txt = readFileFromAsset(url);
+				if (url.startsWith(ANDROID_ASSET_PREFIX_STRING_MARKER)) {
+					txt = readFileFromAsset(url.substring(ANDROID_ASSET_PREFIX_STRING_MARKER.length()));
 				} else {
 					txt = HttpHelper.get(url).getResponseMessage();
 				}
