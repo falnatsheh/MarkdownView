@@ -2,7 +2,9 @@ package us.feras.mdv;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 
 import us.feras.mdv.util.HttpHelper;
 
@@ -10,6 +12,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.webkit.URLUtil;
 import android.webkit.WebView;
 
 import org.markdownj.MarkdownProcessor;
@@ -73,25 +76,22 @@ public class MarkdownView extends WebView {
 		loadMarkdownFile(url, null);
 	}
 
-	private String readFileFromAsset(String url) throws IOException {
-		BufferedReader input = null;
-		StringBuilder contents = new StringBuilder();
+	private String readFileFromAsset(String fileName){
 		try {
-			String assetFileName = url.substring(url.lastIndexOf('/') + 1,
-					url.length());
-			input = new BufferedReader(new InputStreamReader(getContext()
-					.getAssets().open(assetFileName)));
-			String line = null;
-			while ((line = input.readLine()) != null) {
-				contents.append(line);
-				contents.append(System.getProperty("line.separator"));
-			}
-			return contents.toString();
-		} finally {
+			InputStream input =  getContext().getAssets().open(fileName);
 			try {
-				input.close();
-			} catch (IOException e) {
-			}
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(input));
+				StringBuilder content = new StringBuilder(input.available());
+				String line;
+				while ((line = bufferedReader.readLine()) != null) {
+					content.append(line);
+					content.append(System.getProperty("line.separator"));
+				}
+				return content.toString();
+			} finally { input.close(); }
+		} catch (Exception ex){
+			Log.d(TAG, "Error while reading file from assets", ex);
+			return null;
 		}
 	}
 
@@ -101,19 +101,22 @@ public class MarkdownView extends WebView {
 
 		protected String doInBackground(String... params) {
 			try {
-				String txt = "";
+				String markdown = "";
 				String url = params[0];
 				this.cssFileUrl = params[1];
-				if (url.startsWith("file:///android_asset")) {
-					txt = readFileFromAsset(url);
-				} else {
-					txt = HttpHelper.get(url).getResponseMessage();
+				if(URLUtil.isNetworkUrl(url)){
+					markdown = HttpHelper.get(url).getResponseMessage();
+				} else if (URLUtil.isAssetUrl(url)) {
+					markdown = readFileFromAsset(url.substring("file:///android_asset/".length() , url.length()));
+				} else{
+					throw new IllegalArgumentException("The URL string provided is not a network URL or Asset URL.");
 				}
-				return txt;
+
+				return markdown;
 			} catch (Exception ex) {
 				Log.d(TAG, "Error Loading Markdown File.", ex);
+				return null;
 			}
-			return null;
 		}
 
 		protected void onProgressUpdate(Integer... progress) {
