@@ -73,7 +73,7 @@ To load a local file, you have to add it to your assets folder and pass a url th
 markdownView.loadMarkdownFile("file:///android_asset/myFile.md");
 ```
 
-To load a file on the web you need to pass the full url :    
+To load a remote file you need to pass the full url :    
 
 ```java
 markdownView.loadMarkdownFile("http://www.my-site.com/myFile.md");
