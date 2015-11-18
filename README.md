@@ -19,12 +19,9 @@ The MarkdownView itself extends Android webview and adds the nessery logic to pa
 
 ## Usage
 
-A simple usage :
+Add MarkdownView to your layout: 
 
- 
-A simple usage is to add the MarkdownView to your layout: 
-
-```java
+```xml
 <us.feras.mdv.MarkdownView android:id="@+id/markdownView" />
 ```
 
