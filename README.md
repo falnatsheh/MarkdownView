@@ -85,6 +85,16 @@ You could apply custom CSS to the MarkdownView. Example:
 markdownView.loadMarkdownFile("file:///android_asset/hello.md","file:///android_asset/MyCustomTheme.css");
 ```
 You could take a look at CSS example [here](https://github.com/falnatsheh/MarkdownView/tree/master/MarkdownViewDemo/assets/markdown_css_themes), you could also view them in the sample app.
+
+## ChangeLog: 
+
+- **MarkdownView 1.01**:
+	- Support Loading Markdown file from assets subfolders (Thanks [@echodjb](https://github.com/DiegoRosado)). 
+- **MarkdownView 1.0**:
+	- Convert to Gradle Project (Avillable now on JCenteral). 
+	- Fix CSS Issue (Thanks [@swanson](https://github.com/swanson) & [@echodjb](https://github.com/echodjb)). 
+	- Update demo app.  
+
 						
 ## License
 Apache 2.0
