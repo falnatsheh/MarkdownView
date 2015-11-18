@@ -55,7 +55,7 @@ The above screenshots taking from the demo app which could be found here. The de
 - Loading Local Markdown File. 
 - Loading Remote Markdown File. 
 - Loading Markdown text.
-- Live Preview sample code (similar to [Mou Mac app](http://25.io/mou/) preview)
+- Live Preview sample code (similar to [Marked Mac app](http://marked2app.com/))
 - Themes
 
 ## Loading Markdown text or file: 
