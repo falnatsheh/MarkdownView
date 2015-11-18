@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MarkdownView Demo</string>
+    <string name="md_sample_data">### MarkdownView Live Preview \n * * * \n  Edit the text to see it updated instantly.</string>
+
+    <string-array name="md_themes">
+        <item>foghorn</item>
+        <item>alt</item>
+        <item>classic</item>
+        <item>paperwhite</item>
+    </string-array>
+
+</resources>

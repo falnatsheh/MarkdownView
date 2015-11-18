@@ -1,32 +1,68 @@
-![MarkdownView screenshot](http://i.imgur.com/fNiSS.png)
+![MarkdownView screenshot](http://i.imgur.com/EDDSxZK.jpg)
 
-## What is it?
-MarkdownView is an Android webview with the capablity of loading Markdown text or file and display it as HTML, it uses MarkdownJ and extends Android webview. 
+## About
 
-##How to use it? 
+MarkdownView (Markdown For Android) is an Android library that helps you display Markdown text or files (local/remote) as formmated HTML, and style the output using CSS. 
 
-- To add MarkdownView to your project, include the jar, or the source code. 
-- Simple usage is to set the whole activity to a MarkdownView by Adding the following to your onCreate method:
+The MarkdownView itself extends Android webview and adds the nessery logic to parse Markdown (using MarkdownJ) and display the output HTML on the view. 
+
+## Getting started
+
+- To add MarkdownView to your project, add the following to `build.gradle` file:
+```javascript
+	dependencies { 
+	    compile 'us.feras.mdv:markdownview:1.0'
+	}
+```
+
+## Usage
+
+A simple usage :
+
+ 
+A simple usage is to add the MarkdownView to your layout: 
 
 ```java
-MarkdownView markdownView = new MarkdownView(this);
-setContentView(markdownView);
+<us.feras.mdv.MarkdownView android:id="@+id/markdownView" />
 ```
- 
-- Or you can also add it to your layout by using `<us.feras.mdv.MarkdownView android:id="@+id/markdownView" />` 
-and reference it in your activity:  
+
+and reference it in your Activity/Fragment:  
 
 ```java
 MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdownView);
+markdownView.loadMarkdown("## Hello Markdown"); 
+```
+**Note**:
+You could also create the view by code. Below an example of how to set the whole activity to be a MarkdownView by Adding the following to your onCreate method:
+
+```java
+  MarkdownView markdownView = new MarkdownView(this);
+  setContentView(markdownView);
+  markdownView.loadMarkdown("## Hello Markdown"); 
 ```
 
-##Loading MarkDown text or file (local/online): 
+## Screenshots
 
-- **loadMarkdown(String text)**
+<img src="http://i.imgur.com/gY8eXaj.jpg" width="300"> 
+<img src="http://i.imgur.com/ETHYbCv.jpg" width="300"> 
+
+# Demo App and Code Sample
+
+The above screenshots taking from the demo app which could be found here. The demo app include code to demonstrate: 
+
+- Loading Local Markdown File. 
+- Loading Remote Markdown File. 
+- Loading Markdown text.
+- Live Preview sample code (similar to [Mou Mac app](http://25.io/mou/) preview)
+- Themes
+
+## Loading Markdown text or file: 
+
+- `loadMarkdown(String text)`:
 Using this method will result in loading md string to the MarkdownView and displaying it as HTML. 
 
  
-- **loadMarkdownFile(String url)**
+- `loadMarkdownFile(String url)`:
 You can use this method to load local or online files. 
 
 To load a local file, you have to add it to your assets folder and pass a url that start with "file:///android_asset/" : 
