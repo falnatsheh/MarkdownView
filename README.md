@@ -45,7 +45,7 @@ You could also create the view by code. Below an example of how to set the whole
 <img src="http://i.imgur.com/gY8eXaj.jpg" width="300"> 
 <img src="http://i.imgur.com/ETHYbCv.jpg" width="300"> 
 
-# Demo App and Code Sample
+## Demo App and Code Sample
 
 The above screenshots taking from the demo app which could be found here. The demo app include code to demonstrate: 
 
