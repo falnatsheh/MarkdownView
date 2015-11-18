@@ -13,7 +13,7 @@ The MarkdownView itself extends Android webview and adds the nessery logic to pa
 - To add MarkdownView to your project, add the following to `build.gradle` file:
 ```javascript
 	dependencies { 
-	    compile 'us.feras.mdv:markdownview:1.0'
+	    compile 'us.feras.mdv:markdownview:1.1.0'
 	}
 ```
 
