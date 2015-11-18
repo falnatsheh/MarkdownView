@@ -90,9 +90,9 @@ You could take a look at CSS example [here](https://github.com/falnatsheh/Markdo
 
 ## ChangeLog: 
 
-- **MarkdownView 1.01**:
+- **MarkdownView 1.1.0**:
 	- Support Loading Markdown file from assets subfolders (Thanks [@echodjb](https://github.com/DiegoRosado)). 
-- **MarkdownView 1.0**:
+- **MarkdownView 1.0.0**:
 	- Convert to Gradle Project (Avillable now on JCenteral). 
 	- Fix CSS Issue (Thanks [@swanson](https://github.com/swanson) & [@echodjb](https://github.com/echodjb)). 
 	- Update demo app.  
