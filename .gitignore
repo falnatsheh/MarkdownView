@@ -33,9 +33,9 @@ captures/
 
 # Mac OS X clutter
 *.DS_Store
+.DS_Store
 
 # Intellij IDEA 
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/datasources.xml
-.idea/dataSources.ids
+.idea/
+MarkdownView/.idea/
+*.iml
