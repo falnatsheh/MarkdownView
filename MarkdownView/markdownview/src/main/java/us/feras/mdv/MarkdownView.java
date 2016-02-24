@@ -15,7 +15,8 @@ import android.util.Log;
 import android.webkit.URLUtil;
 import android.webkit.WebView;
 
-import org.markdownj.MarkdownProcessor;
+import com.commonsware.cwac.anddown.AndDown;
+
 
 /**
  * @author Feras Alnatsheh
@@ -133,8 +134,8 @@ public class MarkdownView extends WebView {
 	}
 
 	private void loadMarkdownToView(String txt, String cssFileUrl) {
-		MarkdownProcessor m = new MarkdownProcessor();
-		String html = m.markdown(txt);
+		AndDown andDown = new AndDown();
+		String html = andDown.markdownToHtml(txt);
 		if (cssFileUrl != null) {
 			html = 	"<link rel='stylesheet' type='text/css' href='"+ cssFileUrl +"' />" + html;
 		}
