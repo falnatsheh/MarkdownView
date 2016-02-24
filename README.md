@@ -22,7 +22,10 @@ The MarkdownView itself extends Android webview and adds the nessery logic to pa
 Add MarkdownView to your layout: 
 
 ```xml
-<us.feras.mdv.MarkdownView android:id="@+id/markdownView" />
+    <us.feras.mdv.MarkdownView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/markdownView" />
 ```
 
 and reference it in your Activity/Fragment:  
