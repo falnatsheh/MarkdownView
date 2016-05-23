@@ -4,9 +4,9 @@
 
 ## About
 
-MarkdownView (Markdown For Android) is an Android library that helps you display Markdown text or files (local/remote) as formmated HTML, and style the output using CSS. 
+MarkdownView (Markdown For Android) is an Android library that helps you display Markdown text or files (local/remote) as formatted HTML, and style the output using CSS.
 
-The MarkdownView itself extends Android webview and adds the nessery logic to parse Markdown (using MarkdownJ) and display the output HTML on the view. 
+The MarkdownView itself extends Android Webview and adds the necessary logic to parse Markdown (using MarkdownJ) and display the output HTML on the view.
 
 ## Getting started
 
