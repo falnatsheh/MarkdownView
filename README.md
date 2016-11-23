@@ -1,5 +1,5 @@
 
-![MarkdownView screenshot](http://i.imgur.com/EDDSxZK.jpg)
+![MarkdownView screenshot](http://i.imgur.com/PufzgYX.jpg)
 [![Download](https://api.bintray.com/packages/falnatsheh/maven/MarkdownView/images/download.svg)](https://bintray.com/falnatsheh/maven/MarkdownView/_latestVersion)
 
 ## About
